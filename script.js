@@ -1,3 +1,4 @@
+//Dom Elements
 const imageContainer = document.getElementById("image-container");
 const loader = document.getElementById("loader");
 
@@ -6,9 +7,9 @@ let images_loaded = 0;
 let total_images = 0;
 let photos_array = [];
 //Unsplash API
-const count = 30;
+let count = 5;
 const apiKey = "";
-const apiURL = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
+let apiURL = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
 
 //Helper Function to Set Attributes on DOM Elements
 const setAttributes = (el, attributes) => {
@@ -23,6 +24,7 @@ const imageLoaded = () => {
   if (images_loaded === total_images) {
     loader.hidden = true;
     ready = true;
+    count = 30;
   }
 };
 
